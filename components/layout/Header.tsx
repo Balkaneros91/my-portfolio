@@ -13,8 +13,17 @@ export default function Header() {
         <nav>
           <ul className="flex items-center gap-6 text-sm font-medium text-zinc-600">
             <li>
-              <Link href="/" className="hover:text-blue-600 transition-colors">
-                Home
+              <Link
+                href="#about"
+                className="hover:text-blue-600 transition-colors">
+                About
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="#skills"
+                className="hover:text-blue-600 transition-colors">
+                Skills
               </Link>
             </li>
             <li>
@@ -26,9 +35,9 @@ export default function Header() {
             </li>
             <li>
               <Link
-                href="#contacts"
+                href="#contact"
                 className="hover:text-blue-600 transition-colors">
-                Contacts
+                Contact
               </Link>
             </li>
           </ul>

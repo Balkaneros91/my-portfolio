@@ -4,7 +4,7 @@ import { skillGroups } from "@/data/skills";
 export default function SkillsSection() {
   return (
     <Section>
-      <div className="mx-auto max-w-5xl py-20">
+      <div id="skills" className="mx-auto max-w-5xl py-20">
         <p className="text-sm font-medium uppercase text-zinc-500">Skills</p>
         <h2 className="mt-2 text-3xl font-semibold tracking-tight">Skills</h2>
         <p className="mt-4 text-base text-zinc-600">

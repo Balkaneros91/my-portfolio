@@ -3,7 +3,7 @@ import Section from "@/components/layout/Section";
 export default function AboutSection() {
   return (
     <Section>
-      <div className="mx-auto max-w-3xl py-20">
+      <div id="about" className="mx-auto max-w-3xl py-20">
         <p className="text-sm font-medium uppercase text-zinc-500">About</p>
         <h2 className="mt-2 text-3xl font-semibold tracking-tight">About me</h2>
 
