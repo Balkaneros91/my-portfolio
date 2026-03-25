@@ -5,7 +5,7 @@ import { featuredProjects } from "@/data/projects";
 export default function ProjectsSection() {
   return (
     <Section>
-      <div className="mx-auto max-w-5xl py-20">
+      <div id="projects" className="mx-auto max-w-5xl py-20">
         <p className="text-sm font-medium uppercase text-zinc-500">Projects</p>
         <h2 className="mt-2 text-3xl font-semibold tracking-tight">
           Featured projects

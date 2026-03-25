@@ -3,7 +3,7 @@ import Section from "@/components/layout/Section";
 export default function ContactSection() {
   return (
     <Section>
-      <div className="mx-auto max-w-xl py-20">
+      <div id="contact" className="mx-auto max-w-xl py-20">
         <p className="text-sm font-medium uppercase text-zinc-500">Contact</p>
         <h2 className="mt-2 text-3xl font-semibold tracking-tight">
           Let&apos;s connect

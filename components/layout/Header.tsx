@@ -19,14 +19,14 @@ export default function Header() {
             </li>
             <li>
               <Link
-                href="/projects"
+                href="#projects"
                 className="hover:text-blue-600 transition-colors">
                 Projects
               </Link>
             </li>
             <li>
               <Link
-                href="/contacts"
+                href="#contacts"
                 className="hover:text-blue-600 transition-colors">
                 Contacts
               </Link>
