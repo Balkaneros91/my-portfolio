@@ -1,26 +1,101 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f7fafc;
+  --foreground: #1e293b;
+
+  --card: #ffffff;
+  --card-foreground: #1e293b;
+
+  --primary: #496a81;
+  --primary-foreground: #ffffff;
+
+  --secondary: #66999b;
+  --secondary-foreground: #ffffff;
+
+  --muted: #5b6b7a;
+  --muted-soft: #e8eef2;
+
+  --border: #d7e1e8;
+  --ring: #58828e;
+
+  --navy-deep: #2b3a67;
+  --navy-mid: #3a5274;
+  --slate-blue: #425e7b;
+  --blue-slate: #496a81;
+  --air-blue: #58828e;
+  --pacific-blue: #66999b;
+}
+
+.dark {
+  --background: #0f1724;
+  --foreground: #e6edf3;
+
+  --card: #1a2742;
+  --card-foreground: #f3f7fa;
+
+  --primary: #66999b;
+  --primary-foreground: #0f1724;
+
+  --secondary: #58828e;
+  --secondary-foreground: #ffffff;
+
+  --muted: #9fb2c3;
+  --muted-soft: #22324d;
+
+  --border: #314562;
+  --ring: #66999b;
+
+  --navy-deep: #2b3a67;
+  --navy-mid: #3a5274;
+  --slate-blue: #425e7b;
+  --blue-slate: #496a81;
+  --air-blue: #58828e;
+  --pacific-blue: #66999b;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+
+  --color-muted: var(--muted);
+  --color-muted-soft: var(--muted-soft);
+
+  --color-border: var(--border);
+  --color-ring: var(--ring);
+
+  --color-navy-deep: var(--navy-deep);
+  --color-navy-mid: var(--navy-mid);
+  --color-slate-blue: var(--slate-blue);
+  --color-blue-slate: var(--blue-slate);
+  --color-air-blue: var(--air-blue);
+  --color-pacific-blue: var(--pacific-blue);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
+
+* {
+  border-color: var(--border);
+}
+
+::selection {
+  background: color-mix(in srgb, var(--primary) 28%, transparent);
+  color: var(--foreground);
 }
