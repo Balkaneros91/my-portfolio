@@ -33,20 +33,6 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
     const savedLanguage = localStorage.getItem("language");
     return savedLanguage === "sv" ? "sv" : "en";
   });
-  //   const [language, setLanguageState] = useState<Language>("en");
-  //   const [isReady, setIsReady] = useState(false);
-
-  //   useEffect(() => {
-  //     const savedLanguage = localStorage.getItem("language");
-
-  //     if (savedLanguage === "sv") {
-  //       setLanguageState("sv");
-  //     } else {
-  //       setLanguageState("en");
-  //     }
-
-  //     setIsReady(true);
-  //   }, []);
 
   const setLanguage = (lang: Language) => {
     setLanguageState(lang);
