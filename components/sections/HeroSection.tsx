@@ -1,9 +1,16 @@
+"use client";
+
 import Section from "@/components/layout/Section";
 import Link from "next/link";
 import { Icon } from "@iconify/react";
 import Image from "next/image";
+import { useLanguage } from "@/context/language-context";
 
 export default function HeroSection() {
+  const { t, isReady } = useLanguage();
+
+  if (!isReady) return null;
+
   return (
     <Section className="relative overflow-hidden bg-background">
       <div className="pointer-events-none absolute inset-0">
@@ -20,11 +27,11 @@ export default function HeroSection() {
       <div className="relative z-10 mx-auto flex max-w-6xl flex-col items-center py-16 text-center md:py-20 lg:flex-row lg:items-center lg:justify-evenly lg:text-left">
         <div className="lg:max-w-xl">
           <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-muted">
-            Junior Full-Stack Developer
+            {t.hero.role}
           </p>
 
           <h1 className="font-bold tracking-tight text-foreground text-4xl md:text-5xl lg:text-7xl">
-            Antonio-Claudio Andelic
+            {t.hero.name}
           </h1>
 
           {/* Mobile / tablet image */}
@@ -39,10 +46,7 @@ export default function HeroSection() {
           </div>
 
           <p className="mt-6 max-w-2xl text-lg leading-8 text-muted">
-            I build modern web applications with JavaScript, React and Next.js.
-            I am looking for an opportunity where I can keep learning,
-            contribute to real projects and grow as a developer in a strong
-            team.
+            {t.hero.description}
           </p>
 
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3 lg:justify-start">
@@ -57,13 +61,13 @@ export default function HeroSection() {
             <Link
               href="#projects"
               className="rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition duration-200 hover:opacity-90 hover:shadow-md">
-              View projects
+              {t.hero.viewProjects}
             </Link>
 
             <Link
               href="#contact"
               className="rounded-full border border-border px-6 py-3 text-sm font-medium text-foreground transition-colors duration-200 hover:border-primary hover:text-primary hover:shadow-md">
-              Contact me
+              {t.hero.contactMe}
             </Link>
           </div>
         </div>
