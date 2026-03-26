@@ -1,11 +1,19 @@
 type SectionProps = {
   children: React.ReactNode;
+  id?: string;
+  className?: string;
 };
 
-export default function Section({ children }: SectionProps) {
+export default function Section({
+  children,
+  id,
+  className = "",
+}: SectionProps) {
   return (
-    <section className="w-full py-16">
-      <div className="mx-auto max-w-6xl px-6 border-2">{children}</div>
+    <section
+      id={id}
+      className={`w-full scroll-mt-24 px-6 py-20 md:py-24 ${className}`}>
+      <div className="mx-auto w-full max-w-6xl">{children}</div>
     </section>
   );
 }

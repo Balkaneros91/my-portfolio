@@ -1,47 +1,47 @@
 import Link from "next/link";
+import ThemeToggle from "../theme-toggle";
+import LanguageToggle from "../language-toggle";
+
+const navItems = [
+  { href: "#about", label: "About" },
+  { href: "#skills", label: "Skills" },
+  { href: "#projects", label: "Projects" },
+  { href: "#contact", label: "Contact" },
+];
 
 export default function Header() {
   return (
-    <header className="sticky top-0 z-50 w-full border-b  border-zinc-200 bg-white/80 backdrop-blur">
+    <header className="sticky top-0 z-50 w-full border-b border-border/80 bg-background/80 backdrop-blur-md">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        {/* Left: Name */}
-        <div className="text-lg font-semibold tracking-tight">
+        <Link
+          href="/"
+          className="text-base font-semibold tracking-tight text-foreground transition-colors hover:text-primary">
           Antonio-Claudio Andelic
-        </div>
+        </Link>
 
-        {/* Right: Navigation */}
-        <nav>
-          <ul className="flex items-center gap-6 text-sm font-medium text-zinc-600">
-            <li>
-              <Link
-                href="#about"
-                className="hover:text-blue-600 transition-colors">
-                About
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="#skills"
-                className="hover:text-blue-600 transition-colors">
-                Skills
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="#projects"
-                className="hover:text-blue-600 transition-colors">
-                Projects
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="#contact"
-                className="hover:text-blue-600 transition-colors">
-                Contact
-              </Link>
-            </li>
-          </ul>
-        </nav>
+        <div className="flex items-center gap-5">
+          <nav className="hidden md:block">
+            <ul className="flex items-center gap-6 text-sm font-medium text-muted">
+              {navItems.map((item) => (
+                <li key={item.href}>
+                  <Link
+                    href={item.href}
+                    className="group inline-flex items-center transition-colors hover:text-primary">
+                    <span className="relative">
+                      {item.label}
+                      <span className="absolute left-0 top-full mt-0.5 h-px w-0 bg-primary transition-all duration-300 group-hover:w-full" />
+                    </span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+
+          <div className="flex items-center gap-2">
+            <LanguageToggle />
+            <ThemeToggle />
+          </div>
+        </div>
       </div>
     </header>
   );
