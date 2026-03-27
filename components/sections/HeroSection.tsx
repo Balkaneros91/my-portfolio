@@ -15,10 +15,10 @@ export default function HeroSection() {
     <Section className="relative overflow-hidden bg-background">
       <div className="pointer-events-none absolute inset-0">
         {/* Soft glow */}
-        <div className="absolute left-1/2 top-1/3 h-80 w-[320px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/20 blur-3xl md:h-105 md:w-105" />
+        <div className="absolute left-1/2 top-1/3 h-80 w-[320px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/20 dark:bg-primary/20 blur-3xl md:h-105 md:w-105" />
 
         {/* Subtle grid texture */}
-        <div className="absolute inset-0 opacity-[0.04] bg-[linear-gradient(to_right,white_1px,transparent_1px),linear-gradient(to_bottom,white_1px,transparent_1px)] bg-size-[40px_40px] dark:opacity-[0.06]" />
+        <div className="absolute inset-0 opacity-[0.8] bg-[linear-gradient(to_right,rgba(59,130,246,0.08)_1px,transparent_1px),linear-gradient(to_bottom,rgba(59,130,246,0.08)_1px,transparent_1px)] bg-size-[40px_40px] dark:opacity-[0.06] dark:bg-[linear-gradient(to_right,rgba(255,255,255,0.06)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.06)_1px,transparent_1px)]" />
 
         {/* Soft fade at bottom */}
         <div className="absolute inset-x-0 bottom-0 h-32 bg-linear-to-b from-transparent to-background" />
