@@ -1,7 +1,6 @@
 import Section from "@/components/layout/Section";
 import { coreStack, skillGroups } from "@/data/skills";
 import { Icon } from "@iconify/react";
-import { getSkillIcon } from "@/utils/getSkillIcon";
 
 export default function SkillsSection() {
   return (
@@ -25,10 +24,10 @@ export default function SkillsSection() {
           <div className="mt-4 flex flex-wrap gap-4">
             {coreStack.map((skill) => (
               <div
-                key={skill}
+                key={skill.name}
                 className="flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-2 text-sm font-medium text-primary shadow-sm">
-                <Icon icon={getSkillIcon(skill)} className="h-5 w-5" />
-                {skill}
+                <Icon icon={skill.icon} className="h-5 w-5" />
+                {skill.name}
               </div>
             ))}
           </div>
@@ -47,13 +46,13 @@ export default function SkillsSection() {
               <ul className="mt-4 flex flex-wrap gap-2">
                 {group.items.map((item) => (
                   <li
-                    key={item}
+                    key={item.name}
                     className="flex items-center gap-2 rounded-full border border-border bg-muted-soft px-3 py-1.5 text-sm text-foreground shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/40 hover:text-primary ">
                     <Icon
-                      icon={getSkillIcon(item)}
+                      icon={item.icon}
                       className="h-4.5 w-4.5 shrink-0 opacity-90"
                     />
-                    {item}
+                    {item.icon}
                   </li>
                 ))}
               </ul>
