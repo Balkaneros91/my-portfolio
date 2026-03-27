@@ -1,5 +1,5 @@
 import Section from "@/components/layout/Section";
-import { skillGroups } from "@/data/skills";
+import { coreStack, skillGroups } from "@/data/skills";
 import { Icon } from "@iconify/react";
 import { getSkillIcon } from "@/utils/getSkillIcon";
 
@@ -7,7 +7,7 @@ export default function SkillsSection() {
   return (
     <Section id="skills" className="bg-background">
       <div className="mx-auto max-w-5xl">
-        <p className="text-sm font-medium uppercase  tracking-[0.2em] text-muted">
+        <p className="text-sm font-medium uppercase tracking-[0.2em] text-muted">
           Skills
         </p>
         <h2 className="mt-3 text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
@@ -18,6 +18,23 @@ export default function SkillsSection() {
           throughout my education and projects.
         </p>
 
+        {/* Core stack */}
+        <div className="mt-10">
+          <h3 className="text-lg font-semibold text-foreground">Core Stack</h3>
+
+          <div className="mt-4 flex flex-wrap gap-4">
+            {coreStack.map((skill) => (
+              <div
+                key={skill}
+                className="flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-2 text-sm font-medium text-primary shadow-sm">
+                <Icon icon={getSkillIcon(skill)} className="h-5 w-5" />
+                {skill}
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Other skills */}
         <div className="mt-10 grid gap-6 sm:grid-cols-2">
           {skillGroups.map((group) => (
             <div
@@ -34,7 +51,7 @@ export default function SkillsSection() {
                     className="flex items-center gap-2 rounded-full border border-border bg-muted-soft px-3 py-1.5 text-sm text-foreground shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/40 hover:text-primary ">
                     <Icon
                       icon={getSkillIcon(item)}
-                      className="h-4 w-4 shrink-0 opacity-90"
+                      className="h-4.5 w-4.5 shrink-0 opacity-90"
                     />
                     {item}
                   </li>
