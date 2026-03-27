@@ -52,7 +52,7 @@ export default function SkillsSection() {
                       icon={item.icon}
                       className="h-4.5 w-4.5 shrink-0 opacity-90"
                     />
-                    {item.icon}
+                    {item.name}
                   </li>
                 ))}
               </ul>
